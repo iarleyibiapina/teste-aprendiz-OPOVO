@@ -1,0 +1,9 @@
+create database opovo
+
+use opovo
+
+create table lembrete(
+ id_lembrete int primary key auto_increment,
+ titulo varchar(50) not null,
+ descricao varchar(150) not null
+)
