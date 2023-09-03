@@ -1,0 +1,44 @@
+.btn {
+  background-color: var(--azul-escuro);
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.nav-btn {
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: var(--azul-selecionado);
+}
+
+button {
+  border: none;
+  height: 27px;
+}
+
+.btn-return {
+  justify-self: start;
+}
+
+.btn-send {
+  margin-top: 0px;
+}
+
+.btn-send:hover {
+  background-color: green;
+}
+
+.btn-edit:hover {
+  background-color: orange;
+}
+
+.btn-remove:hover,
+.btn-removeAll:hover {
+  background-color: red;
+}

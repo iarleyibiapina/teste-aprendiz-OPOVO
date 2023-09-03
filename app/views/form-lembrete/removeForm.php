@@ -33,16 +33,24 @@ try{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $resultado['titulo'];?></title>
+    <link rel="stylesheet" href="../../src/style/body.css">
+    <link rel="stylesheet" href="../../src/style/allBtn.css">
 </head>
 <body>
-    <form action="../../model/processType.php?id_lembrete=<?php echo $resultado['id_lembrete'];?>" method="post">
-        <label for="titulo">titulo</label>
-        <input type="text" name="titulo" value="<?php echo $resultado['titulo'];?>" placeholder="titulo" readonly>
-        <label for="descricao">descricao</label>
-        <input type="text" name="descricao" value="<?php echo $resultado['descricao'];?>" placeholder="descricao" readonly>
-        <button type="submit" name="type-process" value="remove">Enviar</button>
+    <header class="header-remove">
+        <h1>Excluir lembrete</h1>
+    </header>
+    <div class="form">
+    <form class="form-content" action="../../model/processType.php?id_lembrete=<?php echo $resultado['id_lembrete'];?>" method="post">
+        <label for="titulo"><strong>Titulo</strong></label>
+        <input type="text" name="titulo" value="<?php echo $resultado['titulo'];?>" placeholder="Titulo" readonly>
+        <label for="descricao"><strong>Descrição</strong></label>
+        <input type="text" name="descricao" value="<?php echo $resultado['descricao'];?>" placeholder="Descrição" readonly>
+        <div class="buttons">
+            <a class="btn btn-return" href="../painelLembretes.php">Voltar</a>
+            <button class="btn btn-remove" type="submit" name="type-process" value="remove" style="margin-top: 0;"><strong>Excluir</strong></button>
+        </div>
     </form>
-    <a href="../painelLembretes.php">Voltar</a>
-
+    </div>
 </body>
 </html>

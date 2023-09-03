@@ -36,16 +36,25 @@ try{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $resultado['titulo'];?></title>
+    <link rel="stylesheet" href="../../src/style/body.css">
+    <link rel="stylesheet" href="../../src/style/allBtn.css">
 </head>
 <body>
-    <form action="../../model/processType.php?id=<?php echo $resultado['id_lembrete'];?>" method="post">
-        <label for="titulo" >Titulo</label>
+    <header class="header-create">
+        <h1>Editar lembrete:</h1>
+    </header>
+    <div class="form">
+    <form class="form-content" action="../../model/processType.php?id=<?php echo $resultado['id_lembrete'];?>" method="post">
+        <label for="titulo" ><strong>Titulo</strong></label>
         <input type="text" name="titulo" value="<?php echo $resultado['titulo'];?>" autofocus require maxlength="50">
-        <label for="descricao">Descricao</label>
+        <label for="descricao"><strong>Descrição</strong></label>
         <input type="text" name="descricao" value="<?php echo $resultado['descricao'];?>" require maxlength="50">
-        <button type="submit" name="type-process" value="edit">Enviar</button>
+        <div class="buttons">
+            <a class="btn btn-return" href="../painelLembretes.php">Voltar</a>
+            <button class="btn btn-send" type="submit" name="type-process" value="edit">Enviar</button>
+        </div>
     </form>
-    <a href="../painelLembretes.php">Voltar</a>
+    </div>
 
 </body>
 </html>
