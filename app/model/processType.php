@@ -45,6 +45,24 @@ if(!empty($_POST)){
                 die($error->getMessage());
             } 
             break;
+        case 'remove':
+                try{
+                $sql = "DELETE FROM opovo.lembrete WHERE id_lembrete = :id_lembrete";
+            
+                $execucao = $pdo->prepare($sql);
+
+                $dados = array(
+                    ':id_lembrete' => $_GET['id_lembrete'],
+                );
+            
+                if($execucao->execute($dados)){
+                    header("location: ../views/painelLembretes.php?dadosRemovido");
+                } 
+            } catch (PDOException $error){
+                header("Location: ../views/painelLembretes.php?errorTryRemove");
+                die($error->getMessage());
+            } 
+            break;
         default: 
         header('location: ../views/painelLembretes.php?errorSubmitType');
         break;
